@@ -71,6 +71,11 @@ p {
 	background: #FFFF00;
 }
 
+img {
+	height: 200px;
+	width: 150px;	
+}
+
 #name {
 	color: #CC0043;
 	text-decoration: none;
