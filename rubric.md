@@ -1,4 +1,4 @@
-#FEWD Week #2 Project: Styling with CSS
+#WDI Week #1 Project: Styling with CSS
 
 ---
 
