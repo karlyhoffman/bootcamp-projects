@@ -33,17 +33,21 @@ p {
 
 #wackyman {
 	background-color: #E1332D;
-	height: 60%;
-	width: 15%;
+	height: 50%;
+	width: 12%;
 	display: block;
 	margin: 0 auto;
 	position: relative;
 }
 
 nav {
-	position: absolute;
-    margin: 0 auto 100px;
+	/*position: absolute;
+	display: flex;
+  	align-items: center; */
 
+  	text-align: center; 
+  	position: relative; 
+  	display: inline-block;
 }
 
 .button {
@@ -54,5 +58,7 @@ nav {
 	letter-spacing: .12rem;
 	background-color: grey;
 	padding: 1.7rem 4rem;
-	margin: 0 60px;
+	margin: 0 65px;
+	border-radius: 10%;
+	box-shadow: 3px 3px 1px 0px rgba(0,0,0,0.5);
 }
