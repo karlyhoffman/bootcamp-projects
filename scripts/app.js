@@ -46,7 +46,6 @@ console.log(transmogrifier(42, 13, 7));
 // ROUND 3
 
 // Write a function called toonify that takes two parameters, accent and sentence.
-
 function toonify(accent, sentence) {
 	accent.toLowerCase();
 	// If accent is the string "daffy", return a modified version of sentence with all "s" replaced with "th".
@@ -74,6 +73,34 @@ function toonify(accent, sentence) {
 toonify("daffy", "so you smell like sausage");
 toonify("elmer", "root root for the home team");
 toonify("german", "what are you saying?");
+
+
+
+// ROUND 4
+
+//write function "wordReverse" with single argument, a string
+function wordReverse(string) {
+	//split string by spaces, and reserve order of items to make new string
+	var separator = " ";
+	var splitString = string.split(separator).reverse().join(" ");
+	console.log(splitString);
+};
+
+wordReverse("why hello there");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
