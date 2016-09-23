@@ -86,12 +86,20 @@ function wordReverse(string) {
 	console.log(splitString);
 };
 
-wordReverse("why hello there");
+wordReverse("Karly Lynn Hoffman");
 
 
 
+// ROUND 5
 
+//write function "letterReverse" with single argument, a string
+function letterReverse(string) {
+	//split string by letters, and reserve order of items to make new string
+	var lettersReversed = string.split('').reverse().join('');
+	console.log(lettersReversed);
+};
 
+letterReverse("Karly Lynn Hoffman");
 
 
 
