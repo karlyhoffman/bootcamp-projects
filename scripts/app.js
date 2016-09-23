@@ -20,6 +20,8 @@ function length(arrayOfStrings){
 	return stringLengthArray;
 };
 
+console.log(length(["Karly", "Lynn", "Hoffman"]));
+
 
 
 
@@ -41,19 +43,37 @@ console.log(transmogrifier(42, 13, 7));
 
 
 
+// ROUND 3
 
+// Write a function called toonify that takes two parameters, accent and sentence.
 
+function toonify(accent, sentence) {
+	accent.toLowerCase();
+	// If accent is the string "daffy", return a modified version of sentence with all "s" replaced with "th".
+	if ( accent === "daffy") {
+		console.log(sentence.replace(/s/g, 'th'));
+		return;
+	}
+	// If the accent is "elmer", replace all "r" with "w".
+	else if (accent === "elmer") {
+		console.log(sentence.replace(/r/g, 'w'));
+		return;
+	}
+	// Feel free to add your own accents as well!
+	else if (accent === "german") {
+		console.log(sentence.replace(/w/g, 'v'));
+		return;
+	}
+	// If the accent is not recognized, just return the sentence as-is.
+	else {
+		return sentence;
+	};
+	return
+};
 
-
-
-
-
-
-
-
-
-
-
+toonify("daffy", "so you smell like sausage");
+toonify("elmer", "root root for the home team");
+toonify("german", "what are you saying?");
 
 
 
