@@ -16,7 +16,51 @@ function length(arrayOfStrings){
 		//push string length to new array
 		stringLengthArray.push(arrayOfStrings[i]);
 	}
-	console.log(stringLengthArray);
+
+	return stringLengthArray;
 };
 
-length(["Karly", "Lynn", "Hoffman"]);
+
+
+
+// ROUND 2
+
+// declare function named "transmogrifier" with three number arguments
+// transmogrifier returns product of 1st two numbers, raised to the power of third number
+function transmogrifier(num1, num2, num3) {
+	// multiply first two numbers
+	var base = num1 * num2;
+	// raise first two numbers to the power of third number
+	var transmogrified = Math.pow(base, num3);
+	return transmogrified;
+};
+
+console.log(transmogrifier(5, 4, 3));
+console.log(transmogrifier(13, 12, 5));
+console.log(transmogrifier(42, 13, 7));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
