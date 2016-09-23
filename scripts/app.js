@@ -103,19 +103,27 @@ letterReverse("Karly Lynn Hoffman");
 
 
 
+// ROUND 6
 
+//write a function "longest" that accepts a single argument, an array of strings.
+function longest(arrayOfStrings) {
+	//print array
+	console.log(arrayOfStrings);
+	//declare longestString
+	var longestString = '';
+	
+	//pass through the array to find longer string
+	for (var i = 0 ; i < arrayOfStrings.length ; i++) {
 
+		if (arrayOfStrings[i].length > longestString.length ) {
+			longestString = arrayOfStrings[i];
+		} 
+		else {
+			//run through function again
+		}
+	}
+	console.log(longestString);
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
+longest(["Oh", "home", "on", "the", "range", "dude"]);
 
