@@ -50,18 +50,15 @@ function toonify(accent, sentence) {
 	accent.toLowerCase();
 	// If accent is the string "daffy", return a modified version of sentence with all "s" replaced with "th".
 	if ( accent === "daffy") {
-		console.log(sentence.replace(/s/g, 'th'));
-		return;
+		return sentence.replace(/s/g, 'th');
 	}
 	// If the accent is "elmer", replace all "r" with "w".
 	else if (accent === "elmer") {
-		console.log(sentence.replace(/r/g, 'w'));
-		return;
+		return sentence.replace(/r/g, 'w');
 	}
 	// Feel free to add your own accents as well!
 	else if (accent === "german") {
-		console.log(sentence.replace(/w/g, 'v'));
-		return;
+		return sentence.replace(/w/g, 'v');
 	}
 	// If the accent is not recognized, just return the sentence as-is.
 	else {
@@ -126,4 +123,20 @@ function longest(arrayOfStrings) {
 };
 
 longest(["Oh", "home", "on", "the", "range", "dude"]);
+
+
+
+// FINAL ROUND
+
+//write a function "repMaster" that accepts two arguments, input and a function.
+function repMaster (input, aFunction) {
+	// repMaster should take the result of the string, passed as an argument to the argument function, 
+	var aFunction = toonify("german", input);
+	var repMasterSentence = aFunction + ' which proves that I am the rep MASTER!';
+	//and return this result with ' proves that I am the rep MASTER!' concatenated to it.
+	console.log(repMasterSentence);
+};
+
+repMaster("woah, I was able to do it!", toonify);
+
 
