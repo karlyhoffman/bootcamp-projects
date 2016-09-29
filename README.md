@@ -8,8 +8,7 @@ We are going to take a trip from the Shire, through Rivendell, across Middle
 Earth, and into the heart of Mordor itself, Mount Doom. Pack up, because we're
 going on an adventure.
 
-Your goal is to use jQuery to complete this adventure! Instead of using traditional
-Javascript like the weekend's prompt, you should use jQuery selectors to manipulate the DOM. This second pass on Fellowship should give you a greater appreciation of the ease and simplicity of jQuery compared to standard Javascript.
+Your goal is to use jQuery to complete this adventure! Instead of using traditional Javascript like the weekend's prompt, you should use jQuery selectors to manipulate the DOM. This second pass on Fellowship should give you a greater appreciation of the ease and simplicity of jQuery compared to standard Javascript.
 
 
 #### Directions

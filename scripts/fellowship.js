@@ -20,21 +20,40 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.body;
 var section = '<section></section>';
 
-function makeMiddleEarth() {
-  // your answers here
-}
 
+// PART I
+function makeMiddleEarth(){
+  // create a section tag with an id of `middle-earth`
+  var el = $(section);
+  var middleEarth = $(el).prop('id', 'middle-earth');
+  // append `middle-earth` to your document `body`
+  $(body).append(middleEarth);
+  // add each land as an `article` tag
+  // inside each `article` tag include an `h1` with the name of the land
+  $.each(lands, function( i, value ){
+    $('#middle-earth').append('<article>' + '<h1>' + value + '</h1>' + '</article>');
+  });
+}
 makeMiddleEarth();
 
+// PART II
 function makeHobbits(){
-  // your answers here
+  // display an `unordered list` of hobbits in the shire
+  $( "article:first" ).append('<ul>').prop('id', 'the-shire');
+  $.each(hobbits, function( i, value ){
+    $('#the-shire ul').append('<li>' + value + '</li>');
+    // give each hobbit a class of `hobbit`
+    $('#the-shire li').addClass("hobbit")
+  });
 }
-
 makeHobbits();
 
+//PART III
 function keepItSecretKeepItSafe(){
   // your answers here
 }
+
+
 
 keepItSecretKeepItSafe();
 
