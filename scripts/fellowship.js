@@ -20,7 +20,6 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.body;
 var section = '<section></section>';
 
-
 // PART I
 function makeMiddleEarth(){
   // create a section tag with an id of `middle-earth`
@@ -50,18 +49,30 @@ makeHobbits();
 
 //PART III
 function keepItSecretKeepItSafe(){
-  // your answers here
+  // create a div with an id of `'the-ring'`
+  var div = $('<div></div>');
+  $(div).prop('id', 'the-ring').addClass('magic-imbued-jewelry');
+  // add the ring as a child of `Frodo`
+  $(".hobbit:first").append(div);
 }
-
-
-
 keepItSecretKeepItSafe();
 
+//Part IV
 function makeBuddies(){
-  // your answers here
+  // create an `aside` tag
+  var aside = $('<aside></aside>');
+  // attach an `unordered list` of the `'buddies'` in the aside
+  // insert your aside as a child element of `rivendell`
+  $( "article:nth-child(2)" ).prop('id', 'rivendell').append(aside);
+  $('#rivendell aside').append('<ul>');
+  $.each(buddies, function( i, value ){
+    $('#rivendell ul').append('<li>' + value + '</li>');
+    // give each hobbit a class of `hobbit`
+    $('#rivendell li').addClass("hobbit")
+  });
 }
-
 makeBuddies();
+
 
 function beautifulStranger(){
   // your answers here
