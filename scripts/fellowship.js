@@ -101,33 +101,51 @@ function forgeTheFellowship() {
    // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
 	$('#rivendell li').each(function( index ) {
 		$('#the-fellowship ul').append(this);
+		// after each character is added make an alert that they // have joined your party
   		alert($( this ).text() + ' has joined the fellowship!');
   		$(this).removeClass('buddy hobbit').addClass('fellowship-member');
 	});
 	$('#buddies ul').remove();
-   // after each character is added make an alert that they // have joined your party
 }
 forgeTheFellowship();
 
-
-
-
+//Part VIII
 function theBalrog(){
-  // your answers here
+	// change the `'Gandalf'` text to `'Gandalf the White'`
+	// apply the following style to the element, make the // background 'white', add a grey border
+	var gandalfCSS = {
+		backgroundColor: "white",
+		border: "2px solid grey"
+	};
+	$('#the-fellowship ul li:first').text('Gandalf the White').css(gandalfCSS);
 }
-
 theBalrog();
 
+//Part IX
 function hornOfGondor() {
-  // your answers here
+   // pop up an alert that the horn of gondor has been blown
+   alert("The horn of gondor has been blown!");
+   // Boromir's been killed by the Uruk-hai!
+   // Remove `Boromir` from the Fellowship
+   $('#the-fellowship ul li:nth-child(5)').remove();
 }
-
 hornOfGondor();
 
+//Part X
 function itsDangerousToGoAlone() {
-  // your answers here
+	// take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+	// add a div with an id of `'mount-doom'` to `Mordor`
+	var div = $('<div id="mount-doom">');
+	$('article:nth-child(3)').prop('id','mordor');
+	$('#mordor').append(div);
+	$('#the-fellowship ul li:nth-child(5)').remove();
+	$('#the-fellowship ul li:nth-child(6)').remove();
+	$('#mordor').append($('<ul>'));
+    $('#mordor ul').append('<li>' + hobbits[0] + '</li>');
+    $('#mordor ul').append('<li>' + hobbits[1] + '</li>');
+    // give each hobbit a class of `hobbit`
+    $('#mordor li').addClass("hobbit")
 }
-
 itsDangerousToGoAlone();
 
 function weWantsIt() {
