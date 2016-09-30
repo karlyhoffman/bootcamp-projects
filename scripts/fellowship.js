@@ -19,6 +19,7 @@ var buddies = [
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.body;
 var section = '<section></section>';
+var div = $('<div></div>');
 
 // PART I
 function makeMiddleEarth(){
@@ -139,23 +140,40 @@ function itsDangerousToGoAlone() {
 	$('article:nth-child(3)').prop('id','mordor');
 	$('#mordor').append(div);
 	$('#the-fellowship ul li:nth-child(5)').remove();
-	$('#the-fellowship ul li:nth-child(6)').remove();
+	$('#the-fellowship ul li:nth-child(5)').remove();
 	$('#mordor').append($('<ul>'));
     $('#mordor ul').append('<li>' + hobbits[0] + '</li>');
     $('#mordor ul').append('<li>' + hobbits[1] + '</li>');
     // give each hobbit a class of `hobbit`
-    $('#mordor li').addClass("hobbit")
+    $('#mordor li').addClass("hobbit");
+    keepItSecretKeepItSafe();
 }
 itsDangerousToGoAlone();
 
+//Part XI
 function weWantsIt() {
-  // your answers here
+	// Create a div with an id of `'gollum'` and add it to Mordor
+	var gollum = $('<div id="gollum">');
+	var mountDoom = $('<div id="mount-doom">');
+	$('#mordor').append(gollum);
+	// Remove `the ring` from `Frodo` and give it to `Gollum`
+	$('#the-ring').detach();
+	$(gollum).append($('<div id="#the-ring" class="magic-imbued-jewelry">'));
+	// Move Gollum into Mount Doom
+	$('#mount-doom').append(gollum);
 }
-
 weWantsIt();
 
+//Part XII
 function thereAndBackAgain(){
-  // your answers here
+	// remove `Gollum` and `the Ring` from the document
+	$(gollum).remove()
+	// Move all the `hobbits` back to `the shire`
+	makeHobbits();
+	//remove hobbits from rivendale
+	$('#the-fellowship ul li:last').remove();
+	$('#the-fellowship ul li:last').remove();
+	//remove hobbits from mordor
+	$('#mordor ul').remove();
 }
-
 thereAndBackAgain();
