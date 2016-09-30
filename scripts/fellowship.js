@@ -38,12 +38,13 @@ makeMiddleEarth();
 // PART II
 function makeHobbits(){
   // display an `unordered list` of hobbits in the shire
-  $( "article:first" ).append('<ul>').prop('id', 'the-shire');
+  $( 'article:first' ).append('<ul>').prop('id', 'the-shire');
   $.each(hobbits, function( i, value ){
     $('#the-shire ul').append('<li>' + value + '</li>');
     // give each hobbit a class of `hobbit`
     $('#the-shire li').addClass("hobbit")
   });
+  $( 'ul:first' ).prop('id', 'hobbits');
 }
 makeHobbits();
 
@@ -51,6 +52,7 @@ makeHobbits();
 function keepItSecretKeepItSafe(){
   // create a div with an id of `'the-ring'`
   var div = $('<div></div>');
+  // give the div a class of `'magic-imbued-jewelry'`
   $(div).prop('id', 'the-ring').addClass('magic-imbued-jewelry');
   // add the ring as a child of `Frodo`
   $(".hobbit:first").append(div);
@@ -61,36 +63,54 @@ keepItSecretKeepItSafe();
 function makeBuddies(){
   // create an `aside` tag
   var aside = $('<aside></aside>');
+  $( 'article:nth-child(2)' ).prop('id', 'rivendell').append(aside);
   // attach an `unordered list` of the `'buddies'` in the aside
+  $('#rivendell aside').append('<ul>').prop('id', 'buddies');
   // insert your aside as a child element of `rivendell`
-  $( "article:nth-child(2)" ).prop('id', 'rivendell').append(aside);
-  $('#rivendell aside').append('<ul>');
   $.each(buddies, function( i, value ){
     $('#rivendell ul').append('<li>' + value + '</li>');
-    // give each hobbit a class of `hobbit`
-    $('#rivendell li').addClass("hobbit")
+    $('#rivendell li').addClass("buddy")
   });
 }
 makeBuddies();
 
-
+//Part V
 function beautifulStranger(){
-  // your answers here
+   // change the `'Strider'` text to `'Aragorn'`
+   buddies[3] = 'Aragorn';
 }
-
 beautifulStranger();
 
+//Part VI
 function leaveTheShire(){
-  // your answers here
+	// assemble the `hobbits` and move them to `rivendell`
+	$( '#hobbits' ).remove();
+	$.each(hobbits, function( i, value ){
+    	$('#rivendell ul').append('<li>' + value + '</li>');
+    	// give each hobbit a class of `hobbit`
+    	$('#rivendell li').addClass("hobbit")
+  });
 }
-
 leaveTheShire();
 
+//Part VII
 function forgeTheFellowship() {
-  // your answers here
+   // create a new div called `'the-fellowship'` within `rivendell`
+   var fellowDiv = $('<div>'+ '<ul>' + '</ul>' + '</div>').prop('id', 'the-fellowship');
+   $('#rivendell').append(fellowDiv);
+   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+	$('#rivendell li').each(function( index ) {
+		$('#the-fellowship ul').append(this);
+  		alert($( this ).text() + ' has joined the fellowship!');
+  		$(this).removeClass('buddy hobbit').addClass('fellowship-member');
+	});
+	$('#buddies ul').remove();
+   // after each character is added make an alert that they // have joined your party
 }
-
 forgeTheFellowship();
+
+
+
 
 function theBalrog(){
   // your answers here
