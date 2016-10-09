@@ -1,0 +1,36 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	max-width: 100%;
+}
+
+h1 {
+	font-family: monospace;
+	font-size: 3rem;
+	text-align: center;
+}
+
+#canvas {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border: 1px solid goldenrod;
+	/*border-radius: 50%;*/
+}
+
+
+@media (max-width: 640px){
+	h1 {
+		font-size: 2rem;
+	}
+
+	#canvas {
+		width: 400px; 
+		height: 250px;
+		border: 1px solid blue;
+		/*border-radius: 50%;*/
+	}
+}
