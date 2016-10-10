@@ -1,6 +1,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	background-color: green;
 }
 
 #container {
@@ -14,9 +15,9 @@ h1 {
 }
 
 #canvas {
+	background-color: white;
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
+	margin: 0 auto;
 	border: 1px solid goldenrod;
 	/*border-radius: 50%;*/
 }
