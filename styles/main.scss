@@ -2,6 +2,11 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background-color: green;
+	font-family: 'Arvo', serif;
+	color: goldenrod;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	// background-image: url("../images/grass.png");
+	// background-repeat: repeat;
 }
 
 #container {
@@ -9,12 +14,27 @@ html, body {
 }
 
 h1 {
-	font-family: monospace;
 	font-size: 3rem;
 	text-align: center;
 }
 
+h2 {
+	font-size: 1rem;
+	display: block;
+}
+
+#lives {
+	float: left;
+	margin-left: 10%;
+}
+
+#score, #level {
+	float: right;
+	margin-right: 10%;
+}
+
 #canvas {
+	clear: both;
 	background-color: white;
 	display: block;
 	margin: 0 auto;
