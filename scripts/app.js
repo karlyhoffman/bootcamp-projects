@@ -17,20 +17,6 @@ var img = new Image();
 img.src = "images/evenSmallerHorse.png";
 
 
-canvas.addEventListener('click', function(e){
-	var trueX = e.pageX - ctx.canvas.offsetLeft;
-	var trueY = e.pageY - ctx.canvas.offsetTop;
-	console.log(trueX);
-	console.log(trueY);
-
-	if ( trueX >= horseOne.xCoor
-		&& trueX <= horseOne.currentXCoorMax()
-		&& trueY >= horseOne.yCoor
-		&& trueY <= horseOne.currentYCoorMax()
-	   ) {
-		console.log("Horse clicked!");
-	};
-});
 
 
 function horseImageDraw(horse){
@@ -69,7 +55,26 @@ function Horse() {
 
 	this.currentYCoorMax = function(){
 		return base.yCoor + 50;
+	},
+
+	this.horseClickListener = function() {
+		canvas.addEventListener('click', function(e){
+			var trueX = e.pageX - ctx.canvas.offsetLeft;
+			var trueY = e.pageY - ctx.canvas.offsetTop;
+			// console.log(trueX);
+			// console.log(trueY);
+
+			if ( trueX >= base.xCoor
+				&& trueX <= base.currentXCoorMax()
+				&& trueY >= base.yCoor
+				&& trueY <= base.currentYCoorMax()
+			   ) {
+				base.randomXDirection *= -1 ;
+				base.randomYDirection *= -1 ;
+			};
+		});
 	}
+
 };
 
 
@@ -77,6 +82,7 @@ var horseOne = new Horse();
 // var horseTwo = new Horse();
 
 horseImageDraw(horseOne);
+horseOne.horseClickListener();
 
 // var horseThree = new Horse();  // Level 2
 // var horseFour = new Horse();  // Level 3
