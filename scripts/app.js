@@ -16,14 +16,20 @@ var horses = [];
 var img = new Image();
 img.src = "images/evenSmallerHorse.png";
 
+
 canvas.addEventListener('click', function(e){
-	console.log(e.pageX);
-	console.log(e.pageY);
+	var trueX = e.pageX - ctx.canvas.offsetLeft;
+	var trueY = e.pageY - ctx.canvas.offsetTop;
+	console.log(trueX);
+	console.log(trueY);
 
-	// if (  (horseOne.currentXCoor() - 20) <= e.pageX <= (horseOne.currentXCoor() + 20) ) {
-	// 		console.log("Horse clicked!");
-	// };
-
+	if ( trueX >= horseOne.xCoor
+		&& trueX <= horseOne.currentXCoorMax()
+		&& trueY >= horseOne.yCoor
+		&& trueY <= horseOne.currentYCoorMax()
+	   ) {
+		console.log("Horse clicked!");
+	};
 });
 
 
@@ -34,17 +40,17 @@ function horseImageDraw(horse){
 function Horse() {
 	horses.push(this);
 	var base = this;
-	this.xCoor = Math.floor(Math.random() * 370) + 90, 
-	this.yCoor = Math.floor(Math.random() * 160) + 90, 
+	this.xCoor = (Math.floor(Math.random() * 370) + 90), 
+	this.yCoor = (Math.floor(Math.random() * 160) + 90),
 
 	this.randomXDirection = (Math.random() * 2 - 1) * 2, 
 	this.randomYDirection = (Math.random() * 2 - 1) * 2,
 
 	this.moveHorse = function() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);  
-		// base.xCoor += base.randomXDirection;
-		// base.yCoor += base.randomYDirection;
-		ctx.drawImage(img, base.xCoor, base.yCoor, 50, 50);
+		base.xCoor += base.randomXDirection;
+		base.yCoor += base.randomYDirection;
+		ctx.drawImage(img, base.xCoor, base.yCoor);
 		// console.log(base.xCoor, base.yCoor)
  	},
 
@@ -55,14 +61,14 @@ function Horse() {
 			&& base.yCoor > -60 && base.xCoor > -60) {
 			window.requestAnimationFrame(base.animate);
 		};
+	}
+
+	this.currentXCoorMax = function(){
+		return base.xCoor + 55;
 	},
 
-	this.currentXCoor = function(){
-		return base.xCoor;
-	},
-
-	this.currentYCoor = function(){
-		return base.yCoor;
+	this.currentYCoorMax = function(){
+		return base.yCoor + 50;
 	}
 };
 
@@ -71,8 +77,6 @@ var horseOne = new Horse();
 // var horseTwo = new Horse();
 
 horseImageDraw(horseOne);
-// horseImageDraw(horseTwo);
-
 
 // var horseThree = new Horse();  // Level 2
 // var horseFour = new Horse();  // Level 3

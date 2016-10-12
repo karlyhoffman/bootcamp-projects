@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: green;
+  background-color: #006600;
   font-family: 'Arvo', serif;
   color: goldenrod;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; }
@@ -30,17 +30,8 @@ h2 {
   background-color: white;
   display: block;
   margin: 0 auto;
+  margin-bottom: 10%;
   border: 1px solid goldenrod;
   /*border-radius: 50%;*/ }
-
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2rem; }
-
-  #canvas {
-    width: 400px;
-    height: 250px;
-    border: 1px solid blue;
-    /*border-radius: 50%;*/ } }
 
 /*# sourceMappingURL=main.css.map */

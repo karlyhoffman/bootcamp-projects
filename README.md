@@ -6,8 +6,8 @@ Keep your horses from crossing the boundary line!
 
 
 Technologies Used:
-	- JavaScript
 	- Canvas
+	- JavaScript
 	- SASS/CSS
 
 
