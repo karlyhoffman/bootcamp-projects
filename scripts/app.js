@@ -7,8 +7,8 @@ var lives = 3;
 var score = 0;
 var level = 1;
 
-var horses = [];
 
+var horses = [];
 
 var img = new Image();
 img.src = "images/evenSmallerHorse.png";
@@ -19,7 +19,7 @@ img2.src = "images/evenSmallerHorse.png";
 
 
 function horseImageDraw(horse, image){
-	image.onload = horse.addHorse(image)
+	image.onload = horse.addHorse(image);
 }
 
 function Horse() {
@@ -36,7 +36,7 @@ function Horse() {
  		ctx.drawImage(image, base.xCoor, base.yCoor); 
 	},
 
-	this.horsePath =function(){
+	this.horsePath = function(){
 		base.xCoor += base.randomXDirection;
 		base.yCoor += base.randomYDirection;
 	},
@@ -66,51 +66,57 @@ function Horse() {
 				checkLevel();				
 			};
 		});
-	} 
+	},
+
+	this.checkBound = function(){
+		if (base.xCoor < canvas.width && base.yCoor < canvas.height
+			&& base.yCoor > -61 && base.xCoor > -55) { 
+			return true 
+		}
+		// lose life if not within canvas borders:
+		else {
+			// Remove out-of-bounds horse from array, lose life
+			for (var i = 0; i < horses.length; i++) {
+				if (horses[i] === base) {
+					var index = horses.indexOf(base)
+					horses.splice(index, 1);
+					lives--
+					document.getElementById("livesText").innerHTML = lives;
+				};
+			};
+		};
+	}
 };
+
 
 // Start game with two horses 
 var horseOne = new Horse();
 var horseTwo = new Horse();
-
-function animate(){
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	horseImageDraw(horseOne, img)
-	horseImageDraw(horseTwo, img2)
-	horseOne.horsePath()
-	horseTwo.horsePath()
-	if(checkBound(horseOne) === true && checkBound(horseTwo) === true){
-		window.requestAnimationFrame(animate)
-	}
-	else {
-		lives--;
-		document.getElementById("livesText").innerHTML = lives;
-		lifeCheck();
-		// if ( lives > 0 ) {
-		// 	window.requestAnimationFrame(animate)
-		// }
-	}
-}
-animate();
-
-
-function checkBound(horse){
-	if (horse.xCoor < canvas.width && horse.yCoor < canvas.height
-		&& horse.yCoor > -57 && horse.xCoor > -55) { 
-		// window.requestAnimationFrame(base.moveHorse);
-		return true
-	} 
-	// lose life if not within canvas borders:
-	else {
-		return false
-	};
-}
-
-
 horseOne.switchDirectionsListener();
 horseTwo.switchDirectionsListener();
 
 
+function animate(){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	horseImageDraw(horseOne, img);
+	horseImageDraw(horseTwo, img2);
+	horseOne.horsePath()
+	horseTwo.horsePath()
+
+	horseOne.checkBound();
+	horseTwo.checkBound();
+
+	// console.log(horses);
+
+	// Change to number of lives, once levelUp() is working
+	if (horses.length > 0) {
+		window.requestAnimationFrame(animate)
+	} else {
+		// document.getElementById("livesText").innerHTML = "GAME OVER."
+	};
+
+};
+animate();
 
 
 
@@ -171,12 +177,9 @@ function checkLevel() {
 	}
 };
 
-function lifeCheck(){
-	if ( lives <= 0) {
-		document.getElementById("livesText").innerHTML = "GAME OVER HORSEY.";
-		// ctx.clearRect(0, 0, canvas.width, canvas.height);
-	}
-};
+
+
+// Notes:
 
 // Console.Log Coordinates Clicked
 // canvas.addEventListener('click', function(e){
