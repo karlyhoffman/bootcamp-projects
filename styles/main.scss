@@ -5,9 +5,32 @@ html, body {
 	font-family: 'Arvo', serif;
 	color: goldenrod;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	// background-image: url("../images/grass.jpg");
-	// background-repeat: repeat;
+	background-image: url("../images/grass.jpg");
+	background-size: 35px;
+	background-repeat: repeat;
 }
+
+// #instructions {
+// 	display: block;
+// 	position: absolute;
+// 	z-index:1000000;
+// 	margin: -10% auto;
+// }
+
+// button {
+// 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+// 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+// 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+// 	border-bottom: 1px solid rgba(0,0,0,0.25);
+// 	font-family: 'Arvo', serif;
+// 	font-size: 20px;
+// 	display: block;
+// 	margin: 0 auto;
+// }
+
+// .hide{
+// 	display:none;
+// }
 
 #container {
 	max-width: 100%;

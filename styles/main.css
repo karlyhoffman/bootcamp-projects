@@ -4,7 +4,10 @@ html, body {
   background-color: #006600;
   font-family: 'Arvo', serif;
   color: goldenrod;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; }
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-image: url("../images/grass.jpg");
+  background-size: 35px;
+  background-repeat: repeat; }
 
 #container {
   max-width: 100%; }

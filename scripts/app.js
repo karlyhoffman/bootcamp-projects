@@ -3,51 +3,42 @@ console.log('Linked');
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-//James wants you to change the horse styling everytime
-// UNICORN!!! "Use Glow Property"
-	//Pops up on last level OR Easter Egg = happen to click horses in a certain order
-
-var lives = 3;   // Try to have icons to represent each life
+var lives = 3; 
 var score = 0;
 var level = 1;
 
 var horses = [];
 
+
 var img = new Image();
 img.src = "images/evenSmallerHorse.png";
 
-function drawHorseImage(horse){
-	var img = new Image();
-	img.src = "images/evenSmallerHorse.png";
-	img.onload = horse.moveHorse;
-};
+var img2 = new Image();
+img2.src = "images/evenSmallerHorse.png";
+
+
+
+function horseImageDraw(horse, image){
+	image.onload = horse.addHorse(image)
+}
 
 function Horse() {
 	horses.push(this);
 	var base = this;
+
 	this.xCoor = (Math.floor(Math.random() * 370) + 90), 
 	this.yCoor = (Math.floor(Math.random() * 160) + 90),
 
 	this.randomXDirection = (Math.random() * 2 - 1) * 2, 
 	this.randomYDirection = (Math.random() * 2 - 1) * 2,
 
- 	this.moveHorse = function(){
-		// ctx.clearRect(0, 0, canvas.width, canvas.height);  
+ 	this.addHorse = function(image) {
+ 		ctx.drawImage(image, base.xCoor, base.yCoor); 
+	},
+
+	this.horsePath =function(){
 		base.xCoor += base.randomXDirection;
 		base.yCoor += base.randomYDirection;
-		ctx.drawImage(img, base.xCoor, base.yCoor);
-		// console.log(base.xCoor, base.yCoor)
-
-		// animate if within canvas borders:
-		if (base.xCoor < canvas.width && base.yCoor < canvas.height
-			&& base.yCoor > -57 && base.xCoor > -55) {
-			window.requestAnimationFrame(base.moveHorse);
-		} 
-		// lose life if not within canvas borders:
-		else {
-			lives--;
-			document.getElementById("livesText").innerHTML = lives;
-		};
 	},
 
 	this.currentXCoorMax = function(){
@@ -82,11 +73,45 @@ function Horse() {
 var horseOne = new Horse();
 var horseTwo = new Horse();
 
-drawHorseImage(horseOne);
-horseOne.switchDirectionsListener();
+function animate(){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	horseImageDraw(horseOne, img)
+	horseImageDraw(horseTwo, img2)
+	horseOne.horsePath()
+	horseTwo.horsePath()
+	if(checkBound(horseOne) === true && checkBound(horseTwo) === true){
+		window.requestAnimationFrame(animate)
+	}
+	else {
+		lives--;
+		document.getElementById("livesText").innerHTML = lives;
+		lifeCheck();
+		// if ( lives > 0 ) {
+		// 	window.requestAnimationFrame(animate)
+		// }
+	}
+}
+animate();
 
-drawHorseImage(horseTwo);
+
+function checkBound(horse){
+	if (horse.xCoor < canvas.width && horse.yCoor < canvas.height
+		&& horse.yCoor > -57 && horse.xCoor > -55) { 
+		// window.requestAnimationFrame(base.moveHorse);
+		return true
+	} 
+	// lose life if not within canvas borders:
+	else {
+		return false
+	};
+}
+
+
+horseOne.switchDirectionsListener();
 horseTwo.switchDirectionsListener();
+
+
+
 
 
 function checkLevel() {
@@ -143,6 +168,13 @@ function checkLevel() {
 		var horseEight = new Horse();
 		drawHorseImage(horseEight);
 		horseEight.switchDirectionsListener();
+	}
+};
+
+function lifeCheck(){
+	if ( lives <= 0) {
+		document.getElementById("livesText").innerHTML = "GAME OVER HORSEY.";
+		// ctx.clearRect(0, 0, canvas.width, canvas.height);
 	}
 };
 
