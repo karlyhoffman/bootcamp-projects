@@ -41,10 +41,10 @@ function Horse() {
 	var base = this;
 
 	this.xCoor = (Math.floor(Math.random() * 400) + 200), //Random x coordinate = # from 200 to 600
-	this.yCoor = (Math.floor(Math.random() * 250) + 125), //Random y coordinate = # from 125 to 375
+	this.yCoor = (Math.floor(Math.random() * 150) + 175), //Random y coordinate = # from 175 to 325
 
-	this.randomXDirection = (Math.random() * 2 - 1) * 2, 
-	this.randomYDirection = (Math.random() * 2 - 1) * 2,
+	this.randomXDirection = (Math.random() * 2 - 1) * 1.5, 
+	this.randomYDirection = (Math.random() * 2 - 1) * 1.5,
 
  	this.addHorse = function(image) {
  		ctx.drawImage(image, base.xCoor, base.yCoor); 
@@ -152,7 +152,11 @@ function animate(){
 	if (horses.length > 0) {
 		window.requestAnimationFrame(animate)
 	} else {
-		document.getElementById("livesText").innerHTML = "GAME OVER."
+		// document.getElementById("livesText").innerHTML = "GAME OVER."
+		var h3 = document.createElement('h3');
+		h3.innerHTML = 'GAME OVER';
+		h3.classList.add('blink');
+		document.body.appendChild(h3);
 	};
 
 };
