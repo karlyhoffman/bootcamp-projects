@@ -3,12 +3,12 @@ console.log('Linked');
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-var lives = 3; 
+var lives = 7; 
 var score = 0;
 var level = 1;
 
-
 var horses = [];
+
 
 var img = new Image();
 img.src = "images/evenSmallerHorse.png";
@@ -16,6 +16,20 @@ img.src = "images/evenSmallerHorse.png";
 var img2 = new Image();
 img2.src = "images/evenSmallerHorse.png";
 
+var img3 = new Image();
+img3.src = "images/evenSmallerHorse.png";
+
+var img4 = new Image();
+img4.src = "images/evenSmallerHorse.png";
+
+var img5 = new Image();
+img5.src = "images/evenSmallerHorse.png";
+
+var img6 = new Image();
+img6.src = "images/evenSmallerHorse.png";
+
+var img7 = new Image();
+img7.src = "images/evenSmallerHorse.png";
 
 
 function horseImageDraw(horse, image){
@@ -26,8 +40,8 @@ function Horse() {
 	horses.push(this);
 	var base = this;
 
-	this.xCoor = (Math.floor(Math.random() * 370) + 90), 
-	this.yCoor = (Math.floor(Math.random() * 160) + 90),
+	this.xCoor = (Math.floor(Math.random() * 400) + 200), //Random x coordinate = # from 200 to 600
+	this.yCoor = (Math.floor(Math.random() * 250) + 125), //Random y coordinate = # from 125 to 375
 
 	this.randomXDirection = (Math.random() * 2 - 1) * 2, 
 	this.randomYDirection = (Math.random() * 2 - 1) * 2,
@@ -58,12 +72,12 @@ function Horse() {
 				&& trueY >= base.yCoor
 				&& trueY <= base.currentYCoorMax()
 			   ) {
-				base.randomXDirection *= -1 ;
-				base.randomYDirection *= -1 ;
+				base.randomXDirection *= -1.25 ;
+				base.randomYDirection *= -1.25 ;
 
-				score++;
+				score +=10;
 				document.getElementById("scoreText").innerHTML = score;
-				checkLevel();				
+				// checkLevel();				
 			};
 		});
 	},
@@ -88,23 +102,49 @@ function Horse() {
 	}
 };
 
-
-// Start game with two horses 
 var horseOne = new Horse();
 var horseTwo = new Horse();
+var horseThree = new Horse();
+var horseFour = new Horse();
+var horseFive = new Horse();
+var horseSix = new Horse();
+var horseSeven = new Horse();
+
+
 horseOne.switchDirectionsListener();
 horseTwo.switchDirectionsListener();
+horseThree.switchDirectionsListener();
+horseFour.switchDirectionsListener();
+horseFive.switchDirectionsListener();
+horseSix.switchDirectionsListener();
+horseSeven.switchDirectionsListener();
 
 
 function animate(){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	horseImageDraw(horseOne, img);
 	horseImageDraw(horseTwo, img2);
-	horseOne.horsePath()
-	horseTwo.horsePath()
+	horseImageDraw(horseThree, img3);
+	horseImageDraw(horseFour, img4);
+	horseImageDraw(horseFive, img5);
+	horseImageDraw(horseSix, img6);
+	horseImageDraw(horseSeven, img7);
+	horseOne.horsePath();
+	horseTwo.horsePath();
+	horseThree.horsePath();
+	horseFour.horsePath();
+	horseFive.horsePath();
+	horseSix.horsePath();
+	horseSeven.horsePath();
+
 
 	horseOne.checkBound();
 	horseTwo.checkBound();
+	horseThree.checkBound();
+	horseFour.checkBound();
+	horseFive.checkBound();
+	horseSix.checkBound();
+	horseSeven.checkBound();
 
 	// console.log(horses);
 
@@ -112,80 +152,11 @@ function animate(){
 	if (horses.length > 0) {
 		window.requestAnimationFrame(animate)
 	} else {
-		// document.getElementById("livesText").innerHTML = "GAME OVER."
+		document.getElementById("livesText").innerHTML = "GAME OVER."
 	};
 
 };
 animate();
 
 
-
-function checkLevel() {
-	if ( score === 10 ){
-		// Level 2
-		level++;
-		document.getElementById("levelText").innerHTML = level;
-		// Add Horse
-		var horseThree = new Horse();
-		drawHorseImage(horseThree);
-		horseThree.switchDirectionsListener();
-
-	} else if ( score === 20 ){
-		// Level 3
-		level++;
-		document.getElementById("levelText").innerHTML = level;
-		// Add Horse
-		var horseFour = new Horse();
-		drawHorseImage(horseFour);
-		horseFour.switchDirectionsListener();
-
-	} else if ( score === 30 ){
-		// Level 4
-		level++;
-		document.getElementById("levelText").innerHTML = level;
-		// Add Horse
-		var horseFive = new Horse();
-		drawHorseImage(horseFive);
-		horseFive.switchDirectionsListener();
-
-	} else if ( score === 40 ){
-		// Level 5
-		level++;
-		document.getElementById("levelText").innerHTML = level;
-		// Add Horse
-		var horseSix = new Horse();
-		drawHorseImage(horseSix);
-		horseSix.switchDirectionsListener();
-
-	} else if ( score === 50 ){
-		// Level 6
-		level++;
-		document.getElementById("levelText").innerHTML = level;
-		// Add Horse
-		var horseSeven = new Horse();
-		drawHorseImage(horseSeven);
-		horseSeven.switchDirectionsListener();
-
-	} else if ( score === 60 ){
-		// Level 7
-		level++;
-		document.getElementById("levelText").innerHTML = level;
-		// Add Horse
-		var horseEight = new Horse();
-		drawHorseImage(horseEight);
-		horseEight.switchDirectionsListener();
-	}
-};
-
-
-
-// Notes:
-
-// Console.Log Coordinates Clicked
-// canvas.addEventListener('click', function(e){
-// 		var trueX = e.pageX - ctx.canvas.offsetLeft;
-// 		var trueY = e.pageY - ctx.canvas.offsetTop;
-// 		console.log(trueX);
-// 		console.log(trueY);
-// });
 
