@@ -3,4 +3,4 @@
 Practice: 
 - writing functions 
 - storing variables
-- upload to Github
+- upload to GitHub
