@@ -1,14 +1,13 @@
-//PART I
+// PART I
 var age = window.prompt("What is your age?");
 parseInt(age);
 console.log(age);
 
 if (age > 20) {
-	window.alert("Let's party!!");
+	window.alert("Let's party!");
 } else {
 	window.alert("Too bad, little one.");
 }
-
 
 //PART II
 var nerds = [];
