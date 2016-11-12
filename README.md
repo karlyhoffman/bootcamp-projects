@@ -1,2 +1,1 @@
-# partner
-Partner JS Challenge
+# Partner JS Challenge
