@@ -34,8 +34,6 @@ splitString(name, space);
 var email = window.prompt("What is your email?");
 emails.push(email);
 
-//console.log(nerds);
-
 console.log(nerds);
 console.log(emails);
 
