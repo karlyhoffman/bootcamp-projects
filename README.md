@@ -34,7 +34,7 @@ We're going to begin designing what you want your personal portfolio website to 
 
 ## Get Creative
 
-- Use colour!
+- Use color!
 - Stick to no more than 2 fonts
 - Add images!
 - Research CSS attributes!
