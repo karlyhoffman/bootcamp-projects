@@ -29,13 +29,12 @@ Hold your horses! Literally, try to hold on to them. Keep the horses from crossi
 - Score Board
 
 #### Determine Objects' Properties and Methods:
-###### Boundary Line:
+**Boundary Line:**
 Properties:
 - Dimensions
 Methods:
 - Collision Detection
-
-###### Horses
+**Horses**
 Properties:
 - Image
 - Size
@@ -43,8 +42,7 @@ Methods:
 - Add Horse
 - Move Horse
 - Click, Switch Direction
-
-###### Score Board
+**Score Board**
 Properties:
 - Text/Font
 - Lives
