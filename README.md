@@ -23,18 +23,17 @@ Hold your horses! Literally, try to hold on to them. Keep the horses from crossi
 - SASS/CSS
 
 ## The Approach Taken:
-1. Create Objects:
+#### Create Objects:
 - Boundary Line
 - Horses
 - Score Board
-2. Determine Objects' Properties and Methods:
-Boundary Line:
+#### Determine Objects' Properties and Methods:
+###### Boundary Line:
 Properties:
 - Dimensions
 Methods:
 - Collision Detection
-
-Horses
+###### Horses
 Properties:
 - Image
 - Size
@@ -42,8 +41,7 @@ Methods:
 - Add Horse
 - Move Horse
 - Click, Switch Direction
-
-Score Board
+###### Score Board
 Properties:
 - Text/Font
 - Lives
@@ -51,5 +49,5 @@ Properties:
 Methods:
 - Add Score
 
-3. Create!
+#### Create!
 
