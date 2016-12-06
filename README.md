@@ -23,12 +23,14 @@ Hold your horses! Literally, try to hold on to them. Keep the horses from crossi
 - SASS/CSS
 
 ## The Approach Taken:
+
 #### Create Objects:
 - Boundary Line
 - Horses
 - Score Board
 
 #### Determine Objects' Properties and Methods:
+
 **Boundary Line:**
 Properties:
 - Dimensions
