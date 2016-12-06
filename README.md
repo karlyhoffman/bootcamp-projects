@@ -25,32 +25,38 @@ Hold your horses! Literally, try to hold on to them. Keep the horses from crossi
 ## The Approach Taken:
 
 #### Create Objects:
+
 - Boundary Line
 - Horses
 - Score Board
 
 #### Determine Objects' Properties and Methods:
 
-**Boundary Line:**
+- Boundary Line:
+
 Properties:
-- Dimensions
+  - Dimensions
 Methods:
-- Collision Detection
-**Horses**
+  - Collision Detection
+  
+- Horses:
+
 Properties:
-- Image
-- Size
+  - Image
+  - Size
 Methods:
-- Add Horse
-- Move Horse
-- Click, Switch Direction
-**Score Board**
+  - Add Horse
+  - Move Horse
+  - Click, Switch Direction
+
+- Score Board
+
 Properties:
-- Text/Font
-- Lives
-- Score
+  - Text/Font
+  - Lives
+  - Score
 Methods:
-- Add Score
+  - Add Score
 
 #### Create!
 
