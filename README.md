@@ -15,8 +15,8 @@ Get from California to Chicago as fast as you can, and as cheap as possible! The
 - JavaScript
 
 ### Approach:
-Establish wireframes and user story
-Create HTML structure
-Split work into two parts: CSS (Rena) and JavaScript (Karly)
-Communicate often on progress!
-Deploy on GitHub when completed
+- Establish wireframes and user story
+- Create HTML structure
+- Split work into two parts: CSS (Rena) and JavaScript (Karly)
+- Communicate often on progress!
+- Deploy on GitHub when completed
