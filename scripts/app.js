@@ -37,10 +37,7 @@ var questionList = [
 	"Chicago at last! Want to celebrate with a drink high in the sky at 360 Chicago's Bar?"
 ];
 
-
-//Work In-Progress JavaScript
 var buttonCount = -1;
-
 function displayQuestion() {
 	$('#questions').children('p').text(questionList[buttonCount]);
 };
@@ -61,10 +58,6 @@ $('#no').click( function(){
 	days.addDay(randomNum);
 	// console.log(randomNum);
 });
-
-
-
-
 
 
 //BUTTON COUNT ATTEMPT
@@ -178,6 +171,3 @@ $('#no').click( function(){
 //  var no = function randomNoNumber() {
 // 	return Math.floor(Math.random() * 5) + 1;
 // };
-
-
-
