@@ -9,7 +9,6 @@ var level = 1;
 
 var horses = [];
 
-
 var img = new Image();
 img.src = "images/evenSmallerHorse.png";
 
@@ -30,7 +29,6 @@ img6.src = "images/evenSmallerHorse.png";
 
 var img7 = new Image();
 img7.src = "images/evenSmallerHorse.png";
-
 
 function horseImageDraw(horse, image){
 	image.onload = horse.addHorse(image);
@@ -110,7 +108,6 @@ var horseFive = new Horse();
 var horseSix = new Horse();
 var horseSeven = new Horse();
 
-
 horseOne.switchDirectionsListener();
 horseTwo.switchDirectionsListener();
 horseThree.switchDirectionsListener();
@@ -118,7 +115,6 @@ horseFour.switchDirectionsListener();
 horseFive.switchDirectionsListener();
 horseSix.switchDirectionsListener();
 horseSeven.switchDirectionsListener();
-
 
 function animate(){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -136,7 +132,6 @@ function animate(){
 	horseFive.horsePath();
 	horseSix.horsePath();
 	horseSeven.horsePath();
-
 
 	horseOne.checkBound();
 	horseTwo.checkBound();
@@ -161,6 +156,3 @@ function animate(){
 
 };
 animate();
-
-
-
