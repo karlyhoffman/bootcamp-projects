@@ -1,6 +1,5 @@
 window.onload = function function_name(event) {
-	console.log("Yeah.");
-
+	console.log("Linked.");
 	var checkmark = "(check)";
 	// get a list of element with a tag
 	var list = document.getElementsByTagName('li');
@@ -24,22 +23,17 @@ window.onload = function function_name(event) {
 	// loop through the ordered list
 	// at the end of the innerHTML of each li add <strong> wish I could have</stong>
 	// loop in the reserve order
-
 	for (var i = n - 1; i >= n; i--) {
 
 
 	}
-
 	console.log(paragraph);
 	console.log(content);
 
+	function buildParagraph(context) {
+		var openTag = "<em><strong>";
+		var closingTag = "</strong></em>";
+		return openTag + context + closingTag;
+	}
 
 };
-
-
-
-function buildParagraph(context) {
-	var openTag = "<em><strong>";
-	var closingTag = "</strong></em>";
-	return openTag + context + closingTag;
-}
