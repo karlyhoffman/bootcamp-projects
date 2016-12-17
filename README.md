@@ -1,5 +1,7 @@
 # First WDI Project: "Hold Your Horses" Game
 
+![Hold Your Horses](https://karlyhoffman.github.io/images/horses.png "Hold Your Horses")
+
 ## Project Deliverables:
 - A working game, that I built, hosted somewhere on the internet
 - A link to your hosted working game in the URL section of your Github repo (http://karlyhoffman.github.io/projects/game)
