@@ -22,7 +22,7 @@ Hold your horses! Literally, try to hold on to them. Keep the horses from crossi
 ## Technologies Used:
 - Canvas
 - JavaScript
-- SASS/CSS
+- Sass/CSS
 
 ## The Approach Taken:
 
