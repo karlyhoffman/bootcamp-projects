@@ -1,0 +1,74 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	max-width: 100%;
+	margin: 5% 10%;
+}
+
+header, li, section, aside, footer {
+	border: 1px solid grey;
+	background-color: lightgrey;
+}
+
+header {
+	float: left;
+	height: 8em;
+	width: 25%;
+	margin-bottom: 2%;
+}
+
+li {
+	float: right;
+	list-style: none;
+	height: 4em;
+	width: 15%;
+	margin: 3% 1.5% 0 0;
+}
+
+section {
+	clear: both;
+	height: 23em;
+	width: 100%;
+}
+
+#leftSection {
+	float: left;
+	margin-right: 1.25%;
+}
+
+#rightSection {
+	float: right;
+}
+
+aside {
+	height: 13em;
+	width: 31%;
+}
+
+#leftAside {
+	float: left;
+	margin-right: 3.2%;
+}
+
+#centerAside {
+	float: left;
+	margin-right: 1%;
+}
+
+#rightAside {
+	float: right;
+	margin-left: .9%;
+}
+
+section, aside {
+	margin-bottom: 2%;
+}
+
+footer {
+	clear: both;
+	height: 7em;
+	width: 100%;
+}

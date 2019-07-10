@@ -1,0 +1,43 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	max-width: 100%;
+	margin: 5% 10%;
+}
+
+header, section, aside, footer {
+	border: 1px solid grey;
+	background-color: lightgrey;
+}
+
+header {
+	height: 7em;
+	width: 100%;
+	margin-bottom: 2%;
+}
+
+section {
+	float: left;
+	margin-right: 1%; 
+	height: 25em;
+	width: 69%;
+}
+
+aside {
+	float: right;
+	height: 25em;
+	width: 28%;
+}
+
+section, aside {
+	margin-bottom: 2%;
+}
+
+footer {
+	clear: both;
+	height: 7em;
+	width: 100%;
+}

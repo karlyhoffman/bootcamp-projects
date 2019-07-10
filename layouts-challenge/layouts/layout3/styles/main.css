@@ -1,0 +1,64 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	max-width: 100%;
+	margin: 5% 10%;
+}
+
+header, section, aside, footer {
+	border: 1px solid grey;
+	background-color: lightgrey;
+}
+
+header {
+	height: 7em;
+	width: 100%;
+	margin-bottom: 2%;
+}
+
+section {
+	height: 25em;
+	width: 48.75%;
+}
+
+#leftSection {
+	float: left;
+	margin-right: 1.25%;
+}
+
+#rightSection {
+	float: right;
+}
+
+aside {
+	height: 13em;
+	width: 32%;
+}
+
+#leftAside {
+	float: left;
+	margin-right: 1.75%;
+}
+
+#centerAside {
+	float: left;
+	margin-right: .75%;
+}
+
+#rightAside {
+	float: right;
+	margin-left: .5%;
+}
+
+section, aside {
+	margin-bottom: 2%;
+}
+
+footer {
+	clear: both;
+	height: 7em;
+	width: 100%;
+}
