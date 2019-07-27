@@ -1,0 +1,215 @@
+/*
+Project Name: Blank Template
+Client: Your Client
+Author: Karly Hoffman
+Developer @GA in Chicago
+*/
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.alignright {
+  float: right;
+  padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+  float: left;
+  padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     color: #000;
+     font-size: 12px;
+     line-height: 1.4;
+     font-family: 'Open Sans', sans-serif;
+     background: url(../images/header_bg.jpg) no-repeat center top rgb(134,141,157);
+      background-size: cover;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Center the container */
+#container {
+  width: 100%;
+  margin: auto;
+  height: 500px;
+  display: block;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-left: 10%;
+  margin-top: 2.5%;
+  letter-spacing: 1.2px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin: 11% auto 6% auto; 
+  letter-spacing: 1.6px;
+}
+
+#GetItNow {
+  font-size: 1.3rem;
+  font-weight: 800;
+  border-radius: 5px;
+  background-color: #f9e42e;
+  text-align: center;
+  width: 25%;
+  padding: 15px;
+  margin: auto;
+  color: #033048;
+}
+
+#benefits {
+  background-color: #f0efef;
+  width: 100%;
+  margin: 255px auto 0 auto;
+  height: 500px;
+}
+
+h2:nth-child(2n +1) {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #033048;
+  margin-left: -70%;
+  margin-top: 25%;
+  padding-top: 7%; 
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #606161;
+  margin-top: -5%;
+  margin-left: 10.4%; 
+  width: 43%;
+}
+
+ul {
+  list-style-type: disc;
+  color: #606161;
+  margin-left: 15.5%;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-top: 3%;
+  margin-bottom: 4%;
+  width: 30% 
+}
+
+#quote {
+  background-color: #f0efef;
+  width: 100%;
+  margin-top: 5%;
+  background: url(../images/testimonial_bg.jpg) no-repeat center top rgb(134,141,157);
+  background-size: cover;
+  height: 350px;
+}
+
+p:nth-child(2n +1) {
+  font-size: 1.7rem;
+  font-weight: 100;
+  font-style: italic;
+  color: white; 
+  width: 43%;
+  text-align: center;
+  margin: -5% auto;
+  padding-top: 7%;
+}
+
+h3 {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 5.5%;
+  text-align: center;
+}
+
+#bar {
+  display: block;
+  background-color: #f9e42e;
+  height: 20%;
+}
+
+input{
+  display: inline-block;
+  margin-top: 2.5%;
+  margin-left: 41%;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-radius: 5px; 
+  background-color: #033048;
+  color: white;
+  text-align: center;
+  border-style: none;
+  padding: 10px 60px;
+}
+
+footer {
+  margin-top: -2.5%;
+  background-color: #121212;
+  height: 400px;
+  width: 100%;
+}
+
+#footerLogo {
+  margin-left: 45%;
+  color: #f9e42e;
+  padding-top: 8%;
+  font-size: 2.6rem;
+}
+
+#imgs {
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 48%;
+  padding: 2px;
+}
+
+#copywrite {
+  font-size: .9rem;
+  font-weight: 400;
+  color: white;
+  margin-top: 2%;
+  margin-left: 29.5%;
+  text-align: center;
+}
+
+/* Relaxr - extra bold, 24px
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
